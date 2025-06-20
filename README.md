@@ -2,7 +2,7 @@
 
 A clean and modern calculator app built with HTML, CSS, and JavaScript — perfect for quick and simple math operations with a stylish interface.
 
-![DigitzCalc Screenshot](assets/images/banner.png)
+![DigitzCalc Screenshot](assets/images/image.png)
 
 ## ✨ Features
 
@@ -26,6 +26,6 @@ A clean and modern calculator app built with HTML, CSS, and JavaScript — perfe
 
 ## 📸 Preview
 
-![Calculator Preview](assets/images/screenshot.png)
+![Calculator Preview](assets/images/image.png)
 
 
