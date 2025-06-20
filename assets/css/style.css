@@ -176,6 +176,16 @@ p {
     text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+  .calculator {
+    width: 90%;
+    font-size: 1.2rem;
+  }
+  .option {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
 
 @media only screen and (max-width: 767px) {
     .calculator {
