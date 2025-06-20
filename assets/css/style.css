@@ -39,15 +39,13 @@ body {
 
 .logo::after {
   content: 'Fast  Simple  Accurate';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1.2rem;
-  font-size: clamp(0.8rem, 3vw, 1rem);
-  text-align: center;
+  display: block;
+  margin-top: 0.5rem;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
   font-weight: 500;
   color: rgba(43, 43, 43, 0.7);
 }
+
 
 .container {
   padding-top:10px;
