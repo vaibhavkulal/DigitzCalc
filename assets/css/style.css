@@ -33,18 +33,27 @@ body {
   padding-top: 2rem;
 }
 
-.logo span {
-  color: var(--primary-color);
+.logo {
+  text-align: center;
+  color: var(--text-color);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-family: 'Archivo Black', var(--font-family);
+  font-weight: 400;
+  padding-top: 2rem;
+  margin-bottom: 0.5rem; /* space for tagline */
+  position: relative;
 }
 
 .logo::after {
   content: 'Fast  Simple  Accurate';
   display: block;
-  margin-top: 0.5rem;
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  margin-top: 0.3rem;
+  font-size: clamp(0.8rem, 2.2vw, 1rem);
   font-weight: 500;
   color: rgba(43, 43, 43, 0.7);
+  text-align: center;
 }
+
 
 
 .container {
