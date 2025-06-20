@@ -6,33 +6,28 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     color: var(--text-color);
-    font-family: var(--font-family);
 }
 
 body {
+    font-family: var(--font-family);
     background: var(--main-bg);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 .main {
     width: 100%;
-    flex: 1;
+    height: 100%;
 }
 
 .logo {
     position: relative;
-    text-align: center;
     color: var(--text-color);
+    line-height: 1.3;
     font-size: clamp(2.2rem, 5vw, 3.2rem);
     font-family: 'Archivo Black', var(--font-family);
     font-weight: 400;
-    padding: 2rem 0 1.5rem;
+    font-style: normal;
+    text-align: center;
 }
 
 .logo span {
@@ -40,14 +35,22 @@ body {
 }
 
 .logo::after {
-    content: 'Fast  Simple  Accurate';
     position: absolute;
+    content: 'Fast  Simple  Accurate';
     left: 0;
     right: 0;
-    bottom: -1.2rem;
+    bottom: -1.5rem;
     font-size: clamp(0.8rem, 3vw, 1rem);
     font-family: var(--font-family);
     color: var(--text-color);
+}
+
+.tagline {
+    text-align: center;
+}
+
+p {
+    font-size: clamp(12px, 5vw, 14px);
 }
 
 .container {
@@ -59,71 +62,77 @@ body {
 
 .calculator {
     width: 30%;
-    background-color: #ffffff;
+    min-height: 30vw;
+    height: max-content;
+    border: 1px solid transparent;
     border-radius: 20px;
-    padding: clamp(0.8rem, 2vw, 1.2rem);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: clamp(0.4rem, 1vw, 0.6rem);
+    background-color: #ffffff; /* white calculator body */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* soft shadow */
 }
 
 .input-box {
-    background: #f1f8f9;
+    position: relative;
+    overflow-y: auto;
+    background: #f1f8f9; /* soft input background */
     border-radius: 15px;
     padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 2px solid #1a1a1a;
+}
+
+.input-box,
+.options-container {
+    width: 90%;
+    margin: 5% auto;
+    padding: 4% 3%;
+    border: 2px solid #1a1a1a; /* dark border */
+    border-radius: 15px;
+    background: #f1f5f9; /* soft light gray-blue */
+    box-shadow: 0 6px 18px rgba(1, 0, 0, 0.08); /* subtle shadow */
+    box-sizing: border-box;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    max-height: 60px;
-    overflow: hidden;
 }
-
 #value {
+    position: relative;
     width: 100%;
     height: 100%;
     background: transparent;
-    border: none;
     outline: none;
+    border: none;
     overflow-x: auto;
     white-space: nowrap;
-    font-size: 1.6rem;
-    padding: 0.4rem;
-    color: var(--text-color);
-}
-
-.options-container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
+    color: var(--text-color); /* ensure input text is visible */
 }
 
 .row {
     display: flex;
-    justify-content: space-between;
-    gap: 0.8rem;
+    flex: 1;
+}
+
+.options-container .row:not(:last-child) {
+    margin-bottom: 10px;
 }
 
 .option {
-    flex: 1;
-    padding: 1rem 0;
+    width: 100%;
+    padding: 15px 0px;
+    font-weight: 400;
     font-size: clamp(0.8rem, 2vw, 1rem);
-    background-color: #f0f4f8;
-    border: 1px solid #838080;
+    background-color: #f0f4f8; /* soft grey-blue buttons */
+    border: 1px solid #838080; /* dark border */
+    transition: 0.3s;
+    color: var(--text-color); /* button text */
     border-radius: 50px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: 0.3s ease;
-    user-select: none;
-    touch-action: manipulation;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* button shadow */
 }
 
-.option:hover {
-    background-color: #e2e8f0;
-    cursor: pointer;
+.option:not(:last-child) {
+    margin-right: 10px;
 }
 
 .primary-bg {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* pink = button */
     color: white;
 }
 
@@ -135,8 +144,13 @@ body {
 
 .clear-btn {
     color: crimson;
+    font-size: 900;
     font-weight: bolder;
-    font-size: 1.2rem;
+}
+
+.option:hover {
+    color: var(--text-color);
+    background-color: #e2e8f0;
 }
 
 #calculateBtn {
@@ -147,7 +161,9 @@ body {
     text-align: center;
     padding: 1rem 0;
     font-size: 0.9rem;
+    color: var(--text-color);
     background-color: transparent;
+    margin-top: 2rem;
 }
 
 .footer a {
@@ -160,64 +176,17 @@ body {
     text-decoration: underline;
 }
 
-@media (max-width: 1024px) {
+
+@media only screen and (max-width: 767px) {
     .calculator {
-        width: 60%;
+        width: 80%;
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 600px) {
     .calculator {
-        width: 95%;
-        padding: 1rem;
-        margin-top: 1rem;
-    }
-
-    .option {
-        width: 22%;
-        margin: 1%;
-        padding: 1rem 0;
-        font-size: 1rem;
-    }
-
-    .row {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    #value {
-        font-size: 1.4rem;
-    }
-
-    .logo {
-        font-size: 2rem;
-    }
-
-    .logo::after {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .calculator {
-        width: 95%;
-        padding: 0.8rem;
-    }
-
-    .option {
-        padding: 0.8rem 0;
-        font-size: 0.95rem;
-    }
-
-    #value {
-        font-size: 1.3rem;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-    }
-
-    .logo::after {
-        font-size: 0.75rem;
+        width: 90%;
+        padding: clamp(0.2rem, 1vw, 0.4rem);
+        margin-top: 8%;
     }
 }
